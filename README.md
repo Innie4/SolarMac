@@ -1,6 +1,6 @@
 # MAC Automation Backend
 
-A comprehensive backend system for MAC Automation's industrial automation website, built with Node.js, Express.js, and MongoDB.
+A comprehensive backend system for MAC Automation's industrial automation website, built with Node.js, Express.js, and MongoDB. This project is deployed on Vercel for optimal performance and scalability.
 
 ## Features
 
@@ -51,8 +51,8 @@ A comprehensive backend system for MAC Automation's industrial automation websit
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/mac-automation.git
-   cd mac-automation
+   git clone https://github.com/Innie4/SolarMac.git
+   cd SolarMac
    ```
 
 2. Install dependencies:
