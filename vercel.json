@@ -1,0 +1,35 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "src/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "index.html"
+    }
+  ],
+  "env": {
+    "PORT": "3000",
+    "MONGODB_URI": "@mongodb-uri",
+    "JWT_SECRET": "@jwt-secret",
+    "JWT_EXPIRES_IN": "24h",
+    "SMTP_HOST": "@smtp-host",
+    "SMTP_PORT": "@smtp-port",
+    "SMTP_USER": "@smtp-user",
+    "SMTP_PASS": "@smtp-pass",
+    "UPLOAD_PATH": "uploads",
+    "NODE_ENV": "production",
+    "ADMIN_EMAIL": "@admin-email",
+    "SITE_NAME": "@site-name",
+    "SITE_DESCRIPTION": "@site-description",
+    "CONTACT_EMAIL": "@contact-email"
+  }
+} 

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAC - Industrial Automation Solutions</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'industrial-blue': {
+                            100: '#e6f0f9',
+                            200: '#c2d9ef',
+                            300: '#9ec2e6',
+                            400: '#7aabdc',
+                            500: '#5694d2',
+                            600: '#3d7dc8',
+                            700: '#2966be',
+                            800: '#154fb4',
+                            900: '#0b3866',
+                        },
+                        'industrial-yellow': '#FFD100',
+                        'industrial-dark': '#1A2B3A',
+                        'industrial-gray': '#F5F7FA',
+                        'industrial-text': '#4A5568',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    spacing: {
+                        '128': '32rem',
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(11, 56, 102, 0.8), rgba(11, 56, 102, 0.8)), url('https://placehold.co/1200x600/0b3866/FFFFFF.png?text=Industrial+Automation');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+        
+        .product-overlay {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="#" class="text-industrial-dark font-bold text-xl">Company name</a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="text-industrial-dark font-medium hover:text-industrial-blue-700 transition-colors">Home</a>
+                    <a href="#" class="text-industrial-dark font-medium hover:text-industrial-blue-700 transition-colors">Solutions</a>
+                    <a href="#" class="text-industrial-dark font-medium hover:text-industrial-blue-700 transition-colors">About Us</a>
+                    <a href="#" class="text-industrial-dark font-medium hover:text-industrial-blue-700 transition-colors">How it works</a>
+                </nav>
+                
+                <!-- Action Buttons -->
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-industrial-blue-700 font-medium hover:text-industrial-blue-900 transition-colors">Login</a>
+                    <a href="#" class="bg-industrial-yellow text-industrial-dark px-4 py-2 rounded font-medium hover:bg-opacity-90 transition-colors">Contact Us</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-industrial-dark" id="mobile-menu-button">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu (Hidden by Default) -->
+            <div class="md:hidden hidden bg-white absolute top-16 left-0 right-0 z-50 shadow-lg" id="mobile-menu">
+                <div class="flex flex-col p-4 space-y-4">
+                    <a href="#" class="text-industrial-dark font-medium hover:text-industrial-blue-700 transition-colors">Home</a>
+                    <a href="#" class="text-industrial-dark font-medium hover:text-industrial-blue-700 transition-colors">Solutions</a>
+                    <a href="#" class="text-industrial-dark font-medium hover:text-industrial-blue-700 transition-colors">About Us</a>
+                    <a href="#" class="text-industrial-dark font-medium hover:text-industrial-blue-700 transition-colors">How it works</a>
+                    <div class="pt-2 border-t border-gray-200">
+                        <a href="#" class="block text-industrial-blue-700 font-medium hover:text-industrial-blue-900 transition-colors mb-2">Login</a>
+                        <a href="#" class="block bg-industrial-yellow text-industrial-dark px-4 py-2 rounded font-medium hover:bg-opacity-90 transition-colors text-center">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-white py-20 md:py-32">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4">Advanced Automation Solutions by leveraging innovative thinking, experience & global insight</h1>
+                <a href="#" class="inline-block bg-industrial-yellow text-industrial-dark px-6 py-3 rounded font-medium hover:bg-opacity-90 transition-colors mt-6">Learn more</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="py-16 bg-industrial-gray">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-industrial-dark mb-12">About<br>US</h2>
+            
+            <div class="relative">
+                <!-- Robotic Arm Image -->
+                <div class="w-full md:w-3/5">
+                    <img src="https://placehold.co/800x500/333333/FFFFFF.png?text=Robotic+Arm" alt="Robotic Arm" class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+                
+                <!-- Text Card Overlay -->
+                <div class="bg-white p-8 rounded-lg shadow-lg absolute right-0 top-1/4 md:w-2/5 mt-8 md:mt-0">
+                    <div class="bg-industrial-yellow inline-block px-3 py-1 text-xs font-semibold text-industrial-dark rounded mb-4">FEATURED</div>
+                    <h3 class="text-xl font-bold mb-4">This is what makes us tick</h3>
+                    <p class="text-industrial-text mb-6">
+                        We are a team of passionate engineers and industry experts who have been helping factories & automation industries. We help bring out the best in your business by providing solutions to complex industrial automation challenges.
+                    </p>
+                    <a href="#" class="inline-block bg-industrial-yellow text-industrial-dark px-4 py-2 rounded font-medium hover:bg-opacity-90 transition-colors">Read more</a>
+                </div>
+                
+                <!-- Navigation Dots -->
+                <div class="flex justify-center mt-8">
+                    <button class="w-3 h-3 rounded-full bg-industrial-blue-700 mx-1"></button>
+                    <button class="w-3 h-3 rounded-full bg-gray-300 mx-1"></button>
+                    <button class="w-3 h-3 rounded-full bg-gray-300 mx-1"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Capabilities Section -->
+    <section class="py-16 bg-industrial-gray">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-industrial-dark mb-8">Our<br>Capabilities</h2>
+            
+            <!-- Tabs Navigation -->
+            <div class="border-b border-gray-300 mb-8">
+                <div class="flex">
+                    <button class="tab-button py-2 px-6 font-medium text-industrial-dark border-b-2 border-industrial-yellow focus:outline-none" data-tab="july">July</button>
+                    <button class="tab-button py-2 px-6 font-medium text-gray-500 border-b-2 border-transparent focus:outline-none" data-tab="august">August</button>
+                </div>
+            </div>
+            
+            <!-- July Tab Content -->
+            <div id="july-content" class="tab-content active">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Product One -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                        <img src="https://placehold.co/600x400/FFD100/333333.png?text=Industrial+Automation" alt="Product One" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Product One</h3>
+                            <p class="text-industrial-text mb-4">
+                                Product description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget ante in nunc fringilla elementum. Morbi dictum condimentum magna, eget commodo odio finibus at. Vestibulum ante ipsum primis in faucibus.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500 mb-4">
+                                <span class="mr-4"><i class="far fa-calendar mr-1"></i> July 15, 2023</span>
+                                <span><i class="far fa-clock mr-1"></i> 5 min read</span>
+                            </div>
+                            <a href="#" class="inline-block bg-industrial-yellow text-industrial-dark px-4 py-2 rounded font-medium hover:bg-opacity-90 transition-colors">Read more</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Two -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                        <img src="https://placehold.co/600x400/0b3866/FFFFFF.png?text=Factory+Automation" alt="Product Two" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Product Two</h3>
+                            <p class="text-industrial-text mb-4">
+                                Product description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget ante in nunc fringilla elementum. Morbi dictum condimentum magna, eget commodo odio finibus at. Vestibulum ante ipsum primis in faucibus.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500 mb-4">
+                                <span class="mr-4"><i class="far fa-calendar mr-1"></i> July 18, 2023</span>
+                                <span><i class="far fa-clock mr-1"></i> 4 min read</span>
+                            </div>
+                            <a href="#" class="inline-block bg-industrial-yellow text-industrial-dark px-4 py-2 rounded font-medium hover:bg-opacity-90 transition-colors">Read more</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Three -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                        <img src="https://placehold.co/600x400/333333/FFFFFF.png?text=Robotic+Assembly" alt="Product Three" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Product Three</h3>
+                            <p class="text-industrial-text mb-4">
+                                Product description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget ante in nunc fringilla elementum. Morbi dictum condimentum magna, eget commodo odio finibus at. Vestibulum ante ipsum primis in faucibus.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500 mb-4">
+                                <span class="mr-4"><i class="far fa-calendar mr-1"></i> July 22, 2023</span>
+                                <span><i class="far fa-clock mr-1"></i> 6 min read</span>
+                            </div>
+                            <a href="#" class="inline-block bg-industrial-yellow text-industrial-dark px-4 py-2 rounded font-medium hover:bg-opacity-90 transition-colors">Read more</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Four -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                        <img src="https://placehold.co/600x400/333333/FFFFFF.png?text=Industrial+Robots" alt="Product Four" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Product Four</h3>
+                            <p class="text-industrial-text mb-4">
+                                Product description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget ante in nunc fringilla elementum. Morbi dictum condimentum magna, eget commodo odio finibus at. Vestibulum ante ipsum primis in faucibus.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500 mb-4">
+                                <span class="mr-4"><i class="far fa-calendar mr-1"></i> July 25, 2023</span>
+                                <span><i class="far fa-clock mr-1"></i> 3 min read</span>
+                            </div>
+                            <a href="#" class="inline-block bg-industrial-yellow text-industrial-dark px-4 py-2 rounded font-medium hover:bg-opacity-90 transition-colors">Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- August Tab Content -->
+            <div id="august-content" class="tab-content">
+                <h3 class="text-2xl font-bold mb-6">August</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- August Content -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                        <img src="https://placehold.co/600x400/0b3866/FFFFFF.png?text=August+Content" alt="August Content" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">August Feature</h3>
+                            <p class="text-industrial-text mb-4">
+                                August content description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget ante in nunc fringilla elementum. Morbi dictum condimentum magna, eget commodo odio finibus at.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500 mb-4">
+                                <span class="mr-4"><i class="far fa-calendar mr-1"></i> August 5, 2023</span>
+                                <span><i class="far fa-clock mr-1"></i> 7 min read</span>
+                            </div>
+                            <a href="#" class="inline-block bg-industrial-yellow text-industrial-dark px-4 py-2 rounded font-medium hover:bg-opacity-90 transition-colors">Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- On-demand Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-industrial-dark mb-8">On-demand</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Analytics Solution One -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://placehold.co/600x400/FFD100/333333.png?text=Analytics+Solution" alt="Analytics Solution" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Leveraging Python and Powerful Data Analysis for Success</h3>
+                        <p class="text-industrial-text mb-4">
+                            Discover how our advanced analytics solutions can help your business make better decisions based on real-time data.
+                        </p>
+                        <a href="#" class="text-industrial-blue-700 font-medium hover:text-industrial-blue-900 transition-colors">Read more</a>
+                    </div>
+                </div>
+                
+                <!-- Analytics Solution Two -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://placehold.co/600x400/0b3866/FFFFFF.png?text=Data+Analytics" alt="Data Analytics" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Leveraging Python and Powerful Data Analysis for Success</h3>
+                        <p class="text-industrial-text mb-4">
+                            Discover how our advanced analytics solutions can help your business make better decisions based on real-time data.
+                        </p>
+                        <a href="#" class="text-industrial-blue-700 font-medium hover:text-industrial-blue-900 transition-colors">Read more</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <a href="#" class="text-industrial-blue-700 font-medium hover:text-industrial-blue-900 transition-colors">View more</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Articles and Reports Section -->
+    <section class="py-16 bg-industrial-gray">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-industrial-dark mb-8">Latest<br>Articles and Reports</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Article One -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://placehold.co/600x400/333333/FFFFFF.png?text=Article+Image" alt="Article One" class="w-full h-48 object-cover">
+                        <div class="absolute top-0 left-0 bg-industrial-dark text-white text-xs font-semibold px-2 py-1">NEWS</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Article One</h3>
+                        <p class="text-industrial-text mb-4">
+                            Follow our research and analysis on the latest trends in industrial automation and manufacturing.
+                        </p>
+                        <a href="#" class="text-industrial-blue-700 font-medium hover:text-industrial-blue-900 transition-colors">Read more</a>
+                    </div>
+                </div>
+                
+                <!-- Article Two -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://placehold.co/600x400/0b3866/FFFFFF.png?text=Article+Image" alt="Article Two" class="w-full h-48 object-cover">
+                        <div class="absolute top-0 left-0 bg-industrial-blue-700 text-white text-xs font-semibold px-2 py-1">RESEARCH</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Article Two</h3>
+                        <p class="text-industrial-text mb-4">
+                            Follow our research and analysis on the latest trends in industrial automation and manufacturing.
+                        </p>
+                        <a href="#" class="text-industrial-blue-700 font-medium hover:text-industrial-blue-900 transition-colors">Read more</a>
+                    </div>
+                </div>
+                
+                <!-- Article Three -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://placehold.co/600x400/333333/FFFFFF.png?text=Article+Image" alt="Article Three" class="w-full h-48 object-cover">
+                        <div class="absolute top-0 left-0 bg-industrial-dark text-white text-xs font-semibold px-2 py-1">NEWS</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Article Three</h3>
+                        <p class="text-industrial-text mb-4">
+                            Follow our research and analysis on the latest trends in industrial automation and manufacturing.
+                        </p>
+                        <a href="#" class="text-industrial-blue-700 font-medium hover:text-industrial-blue-900 transition-colors">Read more</a>
+                    </div>
+                </div>
+                
+                <!-- Article Four -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://placehold.co/600x400/FFD100/333333.png?text=Article+Image" alt="Article Four" class="w-full h-48 object-cover">
+                        <div class="absolute top-0 left-0 bg-industrial-dark text-white text-xs font-semibold px-2 py-1">NEWS</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Article Four</h3>
+                        <p class="text-industrial-text mb-4">
+                            Learn about the transformative impact of automation on various industries and how companies are adapting.
+                        </p>
+                        <a href="#" class="text-industrial-blue-700 font-medium hover:text-industrial-blue-900 transition-colors">Read more</a>
+                    </div>
+                </div>
+                
+                <!-- Article Five -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://placehold.co/600x400/FFFFFF/333333.png?text=Article+Image" alt="Article Five" class="w-full h-48 object-cover">
+                        <div class="absolute top-0 left-0 bg-industrial-blue-700 text-white text-xs font-semibold px-2 py-1">RESEARCH</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Article Five</h3>
+                        <p class="text-industrial-text mb-4">
+                            Explore how sustainable manufacturing is transforming industries and creating new opportunities for growth.
+                        </p>
+                        <a href="#" class="text-industrial-blue-700 font-medium hover:text-industrial-blue-900 transition-colors">Read more</a>
+                    </div>
+                </div>
+                
+                <!-- Article Six -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://placehold.co/600x400/333333/FFFFFF.png?text=Article+Image" alt="Article Six" class="w-full h-48 object-cover">
+                        <div class="absolute top-0 left-0 bg-industrial-dark text-white text-xs font-semibold px-2 py-1">NEWS</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Article Six</h3>
+                        <p class="text-industrial-text mb-4">
+                            Learn about the transformative impact of automation on various industries and how companies are adapting.
+                        </p>
+                        <a href="#" class="text-industrial-blue-700 font-medium hover:text-industrial-blue-900 transition-colors">Read more</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <a href="#" class="text-industrial-blue-700 font-medium hover:text-industrial-blue-900 transition-colors">View more</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h2 class="text-3xl font-bold text-industrial-dark mb-4">Get the latest insights<br>straight to your inbox.</h2>
+                </div>
+                
+                <div class="md:w-1/2 flex items-center">
+                    <img src="https://placehold.co/120x120/333333/FFFFFF.png?text=Person" alt="Newsletter" class="w-24 h-24 rounded-full mr-4">
+                    <div>
+                        <form id="newsletter-form" class="flex flex-col sm:flex-row">
+                            <input type="email" placeholder="Your email address" class="px-4 py-2 border border-gray-300 rounded-l focus:outline-none focus:ring-2 focus:ring-industrial-blue-500 mb-2 sm:mb-0">
+                            <button type="submit" class="bg-industrial-blue-700 text-white px-4 py-2 rounded-r font-medium hover:bg-industrial-blue-800 transition-colors">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-industrial-dark text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- Company Logo and Info -->
+                <div>
+                    <div class="flex items-center mb-6">
+                        <img src="https://placehold.co/40x40/FFFFFF/333333.png?text=MAC" alt="MAC Logo" class="w-10 h-10 mr-2">
+                        <span class="font-bold text-xl">MAC</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Leading provider of industrial automation solutions for manufacturing and process industries.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Useful Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Useful Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Products</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Address -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Address</h4>
+                    <p class="text-gray-400 mb-2">123 Industrial Avenue</p>
+                    <p class="text-gray-400 mb-2">Tech Park, Suite 456</p>
+                    <p class="text-gray-400 mb-2">New York, NY 10001</p>
+                    <p class="text-gray-400 mb-2">United States</p>
+                </div>
+                
+                <!-- Email Address -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Email Address</h4>
+                    <p class="text-gray-400 mb-2">info@macautomation.com</p>
+                    <p class="text-gray-400 mb-2">support@macautomation.com</p>
+                    
+                    <h4 class="text-lg font-semibold mt-6 mb-4">Phone Number</h4>
+                    <p class="text-gray-400 mb-2">+1 (555) 123-4567</p>
+                    <p class="text-gray-400 mb-2">+1 (555) 987-6543</p>
+                </div>
+            </div>
+            
+            <!-- Newsletter Form -->
+            <div class="border-t border-gray-700 pt-8 pb-4">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 mb-4 md:mb-0">Subscribe to our newsletter for updates</p>
+                    <div class="flex w-full md:w-auto">
+                        <input type="email" placeholder="Your email address" class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-l focus:outline-none focus:ring-2 focus:ring-industrial-blue-500 text-white w-full md:w-64">
+                        <button class="bg-industrial-yellow text-industrial-dark px-4 py-2 rounded-r font-medium hover:bg-opacity-90 transition-colors">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 pt-8 mt-8 text-center">
+                <p class="text-gray-400">© 2023 MAC Automation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+        
+        // Tab System for Capabilities Section
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('border-industrial-yellow', 'text-industrial-dark');
+                    btn.classList.add('border-transparent', 'text-gray-500');
+                });
+                
+                tabContents.forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Add active class to clicked button and corresponding content
+                button.classList.add('border-industrial-yellow', 'text-industrial-dark');
+                button.classList.remove('border-transparent', 'text-gray-500');
+                
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(`${tabId}-content`).classList.add('active');
+            });
+        });
+        
+        // Newsletter Form Validation
+        const newsletterForm = document.getElementById('newsletter-form');
+        
+        newsletterForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            
+            const emailInput = newsletterForm.querySelector('input[type="email"]');
+            const email = emailInput.value.trim();
+            
+            // Simple email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                emailInput.focus();
+                return;
+            }
+            
+            // Simulate form submission
+            alert('Thank you for subscribing to our newsletter!');
+            emailInput.value = '';
+        });
+        
+        // Add hover effects to product cards
+        const productCards = document.querySelectorAll('.product-card');
+        
+        productCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const overlay = card.querySelector('.product-overlay');
+                if (overlay) {
+                    overlay.style.opacity = '1';
+                }
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                const overlay = card.querySelector('.product-overlay');
+                if (overlay) {
+                    overlay.style.opacity = '0';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
